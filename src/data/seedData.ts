@@ -1,0 +1,86 @@
+import type { BudgetState } from '../types/budget';
+
+export const DEFAULT_ACCOUNTS = [
+  'Checking',
+  'Sapphire Card',
+  'High-Yield Savings',
+  'Cash',
+];
+
+export const INITIAL_BUDGET_STATE: BudgetState = {
+  currency: 'USD',
+  categories: [
+    { id: 'housing', name: 'Housing & Rent', limit: 1850, color: '#0F766E', kind: 'expense' },
+    { id: 'groceries', name: 'Groceries', limit: 620, color: '#0284C7', kind: 'expense' },
+    { id: 'dining', name: 'Dining Out', limit: 340, color: '#D97706', kind: 'expense' },
+    { id: 'utilities', name: 'Utilities & Internet', limit: 240, color: '#475569', kind: 'expense' },
+    { id: 'transport', name: 'Transportation', limit: 280, color: '#6366F1', kind: 'expense' },
+    { id: 'subscriptions', name: 'Subscriptions', limit: 110, color: '#0D9488', kind: 'expense' },
+    { id: 'health', name: 'Health & Fitness', limit: 180, color: '#059669', kind: 'expense' },
+    { id: 'shopping', name: 'Shopping & Home', limit: 250, color: '#DC2626', kind: 'expense' },
+    { id: 'salary', name: 'Salary & Payroll', limit: 0, color: '#16A34A', kind: 'income' },
+    { id: 'freelance', name: 'Freelance & Consulting', limit: 0, color: '#0D9488', kind: 'income' },
+    { id: 'interest', name: 'Dividends & Interest', limit: 0, color: '#0284C7', kind: 'income' },
+  ],
+  transactions: [
+    // November 2026 (Current Month)
+    { id: 'tx-101', date: '2026-11-15', description: 'Whole Foods Market', amount: 118.42, type: 'expense', categoryId: 'groceries', account: 'Sapphire Card', notes: 'Weekly produce & pantry restock' },
+    { id: 'tx-102', date: '2026-11-14', description: 'Blue Bottle Coffee', amount: 14.75, type: 'expense', categoryId: 'dining', account: 'Sapphire Card' },
+    { id: 'tx-103', date: '2026-11-13', description: 'Metro Transit Pass', amount: 68.00, type: 'expense', categoryId: 'transport', account: 'Checking' },
+    { id: 'tx-104', date: '2026-11-12', description: 'Northstar Design Retainer', amount: 1250.00, type: 'income', categoryId: 'freelance', account: 'Checking', notes: 'Q4 product audit milestone' },
+    { id: 'tx-105', date: '2026-11-11', description: 'Osteria Mozza Dinner', amount: 136.80, type: 'expense', categoryId: 'dining', account: 'Sapphire Card' },
+    { id: 'tx-106', date: '2026-11-10', description: 'City Electric & Gas', amount: 142.30, type: 'expense', categoryId: 'utilities', account: 'Checking' },
+    { id: 'tx-107', date: '2026-11-09', description: 'Trader Joe\'s', amount: 94.15, type: 'expense', categoryId: 'groceries', account: 'Sapphire Card' },
+    { id: 'tx-108', date: '2026-11-08', description: 'Equinox Monthly Membership', amount: 115.00, type: 'expense', categoryId: 'health', account: 'Sapphire Card' },
+    { id: 'tx-109', date: '2026-11-07', description: 'Shell Fuel Station', amount: 52.40, type: 'expense', categoryId: 'transport', account: 'Sapphire Card' },
+    { id: 'tx-110', date: '2026-11-06', description: 'Sweetgreen Lunch', amount: 19.85, type: 'expense', categoryId: 'dining', account: 'Sapphire Card' },
+    { id: 'tx-111', date: '2026-11-05', description: 'Fiber Gigabit Internet', amount: 75.00, type: 'expense', categoryId: 'utilities', account: 'Checking' },
+    { id: 'tx-112', date: '2026-11-04', description: 'Apple One & Cloud Storage', amount: 34.95, type: 'expense', categoryId: 'subscriptions', account: 'Sapphire Card' },
+    { id: 'tx-113', date: '2026-11-03', description: 'Crate & Barrel Kitchen', amount: 164.00, type: 'expense', categoryId: 'shopping', account: 'Sapphire Card' },
+    { id: 'tx-114', date: '2026-11-02', description: 'Trader Joe\'s', amount: 109.60, type: 'expense', categoryId: 'groceries', account: 'Sapphire Card' },
+    { id: 'tx-115', date: '2026-11-01', description: 'Biweekly Payroll Deposit', amount: 3150.00, type: 'income', categoryId: 'salary', account: 'Checking' },
+    { id: 'tx-116', date: '2026-11-01', description: 'Parkside Apartments Rent', amount: 1850.00, type: 'expense', categoryId: 'housing', account: 'Checking' },
+    { id: 'tx-117', date: '2026-11-12', description: 'Ramen Nagi', amount: 48.20, type: 'expense', categoryId: 'dining', account: 'Sapphire Card' },
+    { id: 'tx-118', date: '2026-11-14', description: 'Neighborhood Pharmacy', amount: 28.50, type: 'expense', categoryId: 'health', account: 'Checking' },
+    { id: 'tx-119', date: '2026-11-15', description: 'High-Yield Savings Interest', amount: 64.20, type: 'income', categoryId: 'interest', account: 'High-Yield Savings' },
+    { id: 'tx-120', date: '2026-11-06', description: 'Spotify & NYT Bundle', amount: 24.99, type: 'expense', categoryId: 'subscriptions', account: 'Sapphire Card' },
+    { id: 'tx-121', date: '2026-11-11', description: 'Whole Foods Market', amount: 112.90, type: 'expense', categoryId: 'groceries', account: 'Sapphire Card' },
+    { id: 'tx-122', date: '2026-11-13', description: 'Bistro Tartine Bakery', amount: 64.40, type: 'expense', categoryId: 'dining', account: 'Cash' },
+
+    // October 2026
+    { id: 'tx-201', date: '2026-10-30', description: 'Biweekly Payroll Deposit', amount: 3150.00, type: 'income', categoryId: 'salary', account: 'Checking' },
+    { id: 'tx-202', date: '2026-10-27', description: 'Whole Foods Market', amount: 148.90, type: 'expense', categoryId: 'groceries', account: 'Sapphire Card' },
+    { id: 'tx-203', date: '2026-10-22', description: 'Izakaya Dinner', amount: 112.00, type: 'expense', categoryId: 'dining', account: 'Sapphire Card' },
+    { id: 'tx-204', date: '2026-10-18', description: 'Uniqlo Fall Essentials', amount: 189.50, type: 'expense', categoryId: 'shopping', account: 'Sapphire Card' },
+    { id: 'tx-205', date: '2026-10-15', description: 'Biweekly Payroll Deposit', amount: 3150.00, type: 'income', categoryId: 'salary', account: 'Checking' },
+    { id: 'tx-206', date: '2026-10-12', description: 'City Electric & Gas', amount: 129.40, type: 'expense', categoryId: 'utilities', account: 'Checking' },
+    { id: 'tx-207', date: '2026-10-10', description: 'Trader Joe\'s', amount: 215.30, type: 'expense', categoryId: 'groceries', account: 'Sapphire Card' },
+    { id: 'tx-208', date: '2026-10-08', description: 'Equinox Monthly Membership', amount: 115.00, type: 'expense', categoryId: 'health', account: 'Sapphire Card' },
+    { id: 'tx-209', date: '2026-10-05', description: 'Fiber Gigabit Internet', amount: 75.00, type: 'expense', categoryId: 'utilities', account: 'Checking' },
+    { id: 'tx-210', date: '2026-10-04', description: 'Metro Transit & Rideshare', amount: 164.20, type: 'expense', categoryId: 'transport', account: 'Sapphire Card' },
+    { id: 'tx-211', date: '2026-10-03', description: 'Subscriptions Bundle', amount: 94.90, type: 'expense', categoryId: 'subscriptions', account: 'Sapphire Card' },
+    { id: 'tx-212', date: '2026-10-01', description: 'Parkside Apartments Rent', amount: 1850.00, type: 'expense', categoryId: 'housing', account: 'Checking' },
+
+    // September 2026
+    { id: 'tx-301', date: '2026-09-29', description: 'Biweekly Payroll Deposit', amount: 3150.00, type: 'income', categoryId: 'salary', account: 'Checking' },
+    { id: 'tx-302', date: '2026-09-21', description: 'Consulting Workshop', amount: 950.00, type: 'income', categoryId: 'freelance', account: 'Checking' },
+    { id: 'tx-303', date: '2026-09-19', description: 'Whole Foods & Farmers Market', amount: 312.40, type: 'expense', categoryId: 'groceries', account: 'Sapphire Card' },
+    { id: 'tx-304', date: '2026-09-15', description: 'Biweekly Payroll Deposit', amount: 3150.00, type: 'income', categoryId: 'salary', account: 'Checking' },
+    { id: 'tx-305', date: '2026-09-12', description: 'Dining & Coffee Shops', amount: 268.00, type: 'expense', categoryId: 'dining', account: 'Sapphire Card' },
+    { id: 'tx-306', date: '2026-09-09', description: 'Utilities & Fiber Internet', amount: 218.50, type: 'expense', categoryId: 'utilities', account: 'Checking' },
+    { id: 'tx-307', date: '2026-09-06', description: 'Commuter & Fuel', amount: 145.00, type: 'expense', categoryId: 'transport', account: 'Sapphire Card' },
+    { id: 'tx-308', date: '2026-09-01', description: 'Parkside Apartments Rent', amount: 1850.00, type: 'expense', categoryId: 'housing', account: 'Checking' },
+  ],
+  recurringBills: [
+    { id: 'rec-1', name: 'Parkside Apartments Rent', amount: 1850.00, categoryId: 'housing', account: 'Checking', frequency: 'monthly', nextDueDate: '2026-12-01', lastPaidDate: '2026-11-01' },
+    { id: 'rec-2', name: 'Figma & Linear Pro', amount: 32.00, categoryId: 'subscriptions', account: 'Sapphire Card', frequency: 'monthly', nextDueDate: '2026-11-20', lastPaidDate: '2026-10-20' },
+    { id: 'rec-3', name: 'Municipal Water & Waste', amount: 46.50, categoryId: 'utilities', account: 'Checking', frequency: 'monthly', nextDueDate: '2026-11-24', lastPaidDate: '2026-10-24' },
+    { id: 'rec-4', name: 'Auto Insurance Premium', amount: 138.00, categoryId: 'transport', account: 'Checking', frequency: 'monthly', nextDueDate: '2026-11-28', lastPaidDate: '2026-10-28' },
+    { id: 'rec-5', name: 'Equinox Monthly Membership', amount: 115.00, categoryId: 'health', account: 'Sapphire Card', frequency: 'monthly', nextDueDate: '2026-12-08', lastPaidDate: '2026-11-08' },
+  ],
+  savingsGoals: [
+    { id: 'goal-1', name: '6-Month Emergency Reserve', targetAmount: 18000, currentAmount: 14250, targetDate: '2027-04-01' },
+    { id: 'goal-2', name: 'Kyoto Spring Trip', targetAmount: 4200, currentAmount: 2950, targetDate: '2027-03-15' },
+    { id: 'goal-3', name: 'Home Office Upgrade', targetAmount: 1800, currentAmount: 1120, targetDate: '2026-12-20' },
+  ],
+};

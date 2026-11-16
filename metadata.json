@@ -1,0 +1,6 @@
+{
+  "name": "ClearLedger",
+  "description": "Personal budget tracking, category envelopes, recurring bills, and cashflow ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
